@@ -25,16 +25,23 @@ public class GameEngine extends JPanel implements ActionListener {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.DARK_GRAY);
+
         for(int k = 0; k < 4; k++){
             for(int i = 0; i < 4; i++){
+                g.setColor(Color.DARK_GRAY);
                 g.fillRect(150*(i+1),150*(k+1)-50, 100,100);
+
+                //Assign card numbers
+                String cardNumber = String.format("%d",4*k + i + 1);
+                g.setColor(Color.BLACK);
+                g.setFont(new Font("Arial", Font.BOLD, 20));
+                g.drawString(cardNumber,150*i+193, 150*(k+1)+5);
             }
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        
     }
 }
